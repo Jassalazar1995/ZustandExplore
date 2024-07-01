@@ -5,7 +5,8 @@ import { useCounterStore } from './store'
 
 function App() {
   const count = useCounterStore((state) => state.count)
-  const increment = useCounterStore((state) => state.increment)
+  // const increment = useCounterStore((state) => state.increment)
+  const incrementAsync = useCounterStore((state) => state.incrementAsync)
   const decrement = useCounterStore((state) => state.decrement)
   return (
     <>
@@ -24,7 +25,7 @@ function App() {
         </button>
         <div>
         <div>
-        <button onClick={increment}>increment</button>
+        <button onClick={incrementAsync}>increment</button>
         </div>
         <div>
         <button onClick={decrement}>decrement</button>
