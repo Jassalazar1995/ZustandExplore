@@ -23,8 +23,12 @@ function App() {
           count is {count}
         </button>
         <div>
+        <div>
         <button onClick={increment}>increment</button>
+        </div>
+        <div>
         <button onClick={decrement}>decrement</button>
+        </div>
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
