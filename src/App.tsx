@@ -2,12 +2,28 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useCounterStore } from './store'
+import { useEffect } from 'react'
+
+const logCount = () => {
+  const count = useCounterStore.getState().count
+  console.log('count is', count)
+}
+
+const setCount = () => {
+  useCounterStore.setState({count: 10})
+
+}
 
 function App() {
   const count = useCounterStore((state) => state.count)
   // const increment = useCounterStore((state) => state.increment)
   const incrementAsync = useCounterStore((state) => state.incrementAsync)
   const decrement = useCounterStore((state) => state.decrement)
+
+  useEffect(() => {
+    logCount()
+    setCount()
+  },[])
   return (
     <>
       <div>
